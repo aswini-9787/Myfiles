@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SatSecure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🛰 SatSecure</h1>
+        <p>Automated Satellite Data Segmentation</p>
+    </header>
+
+    <main>
+        <section id="auth">
+            <h2>Create Account / Login</h2>
+
+            <input id="username" placeholder="Username">
+            <input id="password" type="password"
+                   placeholder="Password">
+
+            <button onclick="register()">Create Account</button>
+            <button onclick="login()">Login</button>
+
+            <p id="authMessage"></p>
+        </section>
+
+        <section id="messenger" hidden>
+            <h2>Welcome, <span id="currentUser"></span></h2>
+            <button onclick="logout()">Logout</button>
+
+            <h3>Send a Message</h3>
+            <input id="recipient" placeholder="Recipient username">
+            <textarea id="message" placeholder="Type your message"></textarea>
+
+            <label for="lifetime">Message lifetime:</label>
+            <select id="lifetime">
+                <option value="10">10 seconds</option>
+                <option value="30">30 seconds</option>
+                <option value="60">1 minute</option>
+                <option value="300">5 minutes</option>
+            </select>
+
+            <button onclick="sendMessage()">Send Message</button>
+            <p id="sendStatus"></p>
+
+            <h3>Inbox</h3>
+            <div id="inbox"></div>
+
+            <h3>Satellite Segmentation</h3>
+            <p>
+                This section can later connect to a machine-learning
+                model for satellite image segmentation.
+            </p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
